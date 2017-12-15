@@ -31,6 +31,7 @@ public class bitonicSortTestWith2Arrays {
 		inputBiotonicArray2[4]=5;
 		inputBiotonicArray2[5]=2;
 		
+		//find peek in first array
 		for (int i = 0;i<inputBiotonicArray1.length;i++) 
 		{
 			if(inputBiotonicArray1[i]>ArrPeek1) {
@@ -39,6 +40,7 @@ public class bitonicSortTestWith2Arrays {
 		}
 		System.out.println("Peek1 = "+ArrPeek1);
 		
+		//find peek in first array
 		for (int i = 0;i<inputBiotonicArray2.length;i++) 
 		{
 			
@@ -55,13 +57,19 @@ public class bitonicSortTestWith2Arrays {
 	
 	private static int[] sortUp(int i, int j, int c) {
 		
+		//checks if its right sided to the peek
 		if(inputBiotonicArray1[i]<ArrPeek1&&inputBiotonicArray2[j]<ArrPeek2)
 		{
+			//compares next element of array1 with the next in array2  
 			if(inputBiotonicArray1[i]<=inputBiotonicArray2[j]) {
 				Result[c]=inputBiotonicArray1[i];
 				System.out.println(inputBiotonicArray1[i]+" added!");
+				
+				//handling indexes
 				i++;
 				c++;
+				
+				//starts self recursive
 				return sortUp(i,j,c);
 			}
 			else {
@@ -72,7 +80,6 @@ public class bitonicSortTestWith2Arrays {
 				return sortUp(i,j,c);
 			}
 		}
-		
 		else if(inputBiotonicArray1[i]<ArrPeek1) {
 			Result[c]=inputBiotonicArray1[i];
 			System.out.println(inputBiotonicArray1[i]+" added!");
@@ -88,6 +95,8 @@ public class bitonicSortTestWith2Arrays {
 			c++;
 			return sortUp(i,j,c);
 		}
+		
+		//go to left-sided sort 
 		return sortDown(i,j,c);
 	}
 	
@@ -127,6 +136,8 @@ public class bitonicSortTestWith2Arrays {
 			return sortDown(i,j,c);
 		
 		}
+		
+		//Returns final array
 		return Result;
 	}
 
