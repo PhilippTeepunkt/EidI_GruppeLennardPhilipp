@@ -42,8 +42,7 @@ public class bitonicSortTestWith2Arrays {
 		
 		//find peek in first array
 		for (int i = 0;i<inputBiotonicArray2.length;i++) 
-		{
-			
+		{	
 			if(inputBiotonicArray2[i]>ArrPeek2) {
 				ArrPeek2 = inputBiotonicArray2[i];
 			}
